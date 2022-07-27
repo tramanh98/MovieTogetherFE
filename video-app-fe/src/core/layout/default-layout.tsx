@@ -1,14 +1,11 @@
 import React from "react";
-import "./style.css";
-export const DefaultLayout = (props) => {
+import ResponsiveAppBar from "./header";
+import { MainRoutes } from "./routes";
+export const DefaultLayout = () => {
   return (
     <React.Fragment>
-      {/* <Layout>
-                <Aux>
-                    {props.children}
-                </Aux>
-                <Footer />
-            </Layout> */}
+      <ResponsiveAppBar />
+      {/* <MainRoutes /> */}
     </React.Fragment>
   );
 };
