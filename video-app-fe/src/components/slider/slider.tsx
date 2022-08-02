@@ -58,9 +58,9 @@ const HeroSlide = () => {
           </SwiperSlide>
         ))} */}
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <img src="https://i.im.ge/2022/08/02/FyG76P.banner.jpg" />
         </SwiperSlide>
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
         </SwiperSlide>
         <SwiperSlide>
@@ -68,7 +68,7 @@ const HeroSlide = () => {
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
       {/* {movieItems.map((item, i) => (
         <TrailerModal key={i} item={item} />
