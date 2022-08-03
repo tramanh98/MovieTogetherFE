@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,10 +13,15 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
-import "./slider.scss";
 import { useNavigate } from "react-router-dom";
-import { Box, Button, Modal, Typography } from "@mui/material";
 import { FreeMode, Navigation, Thumbs } from "swiper";
+import "./slider.scss";
+
+import { HomeOutlined } from "@ant-design/icons";
+import { Tabs } from "antd";
+
+const { TabPane } = Tabs;
+
 const HeroSlide = () => {
   SwiperCore.use([Autoplay]);
 
@@ -39,7 +44,7 @@ const HeroSlide = () => {
   }, []);
 
   return (
-    <div className="hero-slide">
+    <div className="heroSlide">
       <Swiper
         loop={true}
         spaceBetween={10}
@@ -47,32 +52,11 @@ const HeroSlide = () => {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
-        {/* {movieItems.map((item, i) => (
-          <SwiperSlide key={i}>
-            {({ isActive }) => (
-              <HeroSlideItem
-                item={item}
-                className={`${isActive ? "active" : ""}`}
-              />
-            )}
-          </SwiperSlide>
-        ))} */}
         <SwiperSlide>
           <img src="https://i.im.ge/2022/08/02/FyG76P.banner.jpg" />
         </SwiperSlide>
-        {/* <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide> */}
       </Swiper>
-      {/* {movieItems.map((item, i) => (
-        <TrailerModal key={i} item={item} />
-      ))} */}
+      <FilterBox />
     </div>
   );
 };
@@ -141,44 +125,58 @@ const style = {
   p: 4,
 };
 
-const TrailerModal = (props: any) => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+const tabList = [
+  {
+    title: "Hotel & motel",
+  },
+  {
+    title: "Flights",
+  },
+  {
+    title: "Long stays",
+  },
+];
 
-  const item = props.item;
-
-  const iframeRef = useRef(null);
-
-  //   const onClose = () => iframeRef.current.setAttribute("src", "");
-
+const FilterBox = () => {
   return (
-    <Modal
-      open={open}
-      onClose={handleClose}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
-    >
-      <Box sx={style}>
-        <Typography id="modal-modal-title" variant="h6" component="h2">
-          Text in a modal
-        </Typography>
-        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-          Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-        </Typography>
-      </Box>
-    </Modal>
-    // <Modal active={false} id={`modal_${item.id}`}>
-    //   <ModalContent onClose={onClose}>
-    //     <iframe
-    //       ref={iframeRef}
-    //       width="100%"
-    //       height="500px"
-    //       title="trailer"
-    //     ></iframe>
-    //   </ModalContent>
-    // </Modal>
+    <>
+      <div className="wrapFilter">
+        <Tabs defaultActiveKey="1">
+          {tabList.map((t, i) => (
+            <TabPane
+              className="m-0"
+              tab={<TabPaneCustom title={t.title} />}
+              key={i + 1}
+            >
+              {/* Content of Tab Pane {i} */}
+              {/* <TabContent/> */}
+            </TabPane>
+          ))}
+        </Tabs>
+      </div>
+      <TabContent />
+    </>
   );
 };
+
+const TabPaneCustom = ({ title }: { title: string }) => {
+  return (
+    <>
+      <span className="d-flex flex-column justify-content-center">
+        <HomeOutlined className="m-0" />
+        <span>{title}</span>
+      </span>
+    </>
+  );
+};
+
+const TabContent = () => {
+  return (
+    <div className="tabContent p-3">
+      <h1>halooooo</h1>
+    </div>
+  );
+};
+const t = {};
 
 export default HeroSlide;

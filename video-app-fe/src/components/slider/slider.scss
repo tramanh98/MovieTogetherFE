@@ -92,3 +92,36 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+/****************/
+.out-wrap-filter {
+  position: absolute;
+}
+.wrapFilter {
+  border-radius: 0.5rem;
+  width: fit-content;
+  position: absolute;
+  top: 100px;
+  z-index: 1000;
+  background-color: white;
+  padding: 0 2rem;
+  .ant-tabs-top .ant-tabs-nav {
+    margin: 0;
+  }
+}
+
+.heroSlide {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.tabContent {
+  position: absolute;
+  top: 130px;
+  background-color: aqua;
+  z-index: 900;
+  width: 50%;
+  border-radius: 0.5rem;
+}
+
