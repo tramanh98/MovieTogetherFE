@@ -1,12 +1,15 @@
 #app {
   height: 100%;
 }
+// html,
+// body {
+//   position: relative;
+//   height: 100%;
+// }
 html,
 body {
-  position: relative;
   height: 100%;
 }
-
 body {
   background: #eee;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -48,11 +51,6 @@ body {
   object-fit: cover;
 }
 
-body {
-  background: #000;
-  color: #000;
-}
-
 .swiper {
   width: 100%;
   height: 300px;
@@ -63,11 +61,6 @@ body {
 .swiper-slide {
   background-size: cover;
   background-position: center;
-}
-
-.mySwiper2 {
-  // height: 40%;
-  width: 100%;
 }
 
 .mySwiper {
@@ -94,34 +87,69 @@ body {
 }
 
 /****************/
-.out-wrap-filter {
+.mySwiper2 {
+  // height: 100%;
+  width: 100%;
   position: absolute;
+}
+
+.outsideSwiper {
+  position: absolute;
+  // display: block;
+  // height: 500px;
+}
+
+.wrapOutsideFilter {
+  padding-top: 200px;
+  position: relative;
+  z-index: 100;
+  display: table-cell;
+  vertical-align: top;
 }
 .wrapFilter {
   border-radius: 0.5rem;
   width: fit-content;
-  position: absolute;
-  top: 100px;
+  position: relative;
   z-index: 1000;
-  background-color: white;
   padding: 0 2rem;
+  box-shadow: rgb(0 0 0 / 20%) 0px 1px 6px 2px;
+  background-color: rgb(255, 255, 255);
   .ant-tabs-top .ant-tabs-nav {
     margin: 0;
   }
 }
 
 .heroSlide {
-  position: relative;
-  display: flex;
-  justify-content: center;
+  // position: relative;
+  // display: flex;
+  // justify-content: center;
 }
 
 .tabContent {
-  position: absolute;
-  top: 130px;
   background-color: aqua;
-  z-index: 900;
-  width: 50%;
+  margin-top: -2rem !important;
+  width: 100%;
   border-radius: 0.5rem;
+  background-color: #f8f7f9;
+  box-shadow: rgb(0 0 0 / 20%) 0px 2px 8px 3px;
 }
 
+.btn-submit {
+  margin-top: -1rem !important;
+  // position: absolute;
+  // bottom: -40px;
+}
+
+.containerTitle {
+  display: table;
+  position: relative;
+  width: 100%;
+}
+
+.hello-title {
+  display: table-cell;
+  vertical-align: top;
+  position: relative;
+  height: 600px;
+  background-color: aqua;
+}

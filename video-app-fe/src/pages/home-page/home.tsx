@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import HeroSlide from "../../components/slider/slider";
+import HeroSlide from "./components/banner/slider";
+import LocationSlider from "./components/location-slider/location-slider";
+import LocationTabs from "./components/recommended-location-cards/recommended-location-tabs";
 
 export const HomePage = () => {
   const [video, setVideo] = useState<any>({});
@@ -17,14 +19,13 @@ export const HomePage = () => {
     // }
   }, []);
   return (
-    // <div className="App">
-    //     <video controls muted autoPlay>
-    //       <source src="http://localhost:3001/api/video" type="video/mp4"></source>
-    //     </video>
-    //   <HeroSlide/>
-    // </div>
     <>
+      {/* banner */}
       <HeroSlide />
+      <div className="container">
+        <LocationTabs />
+        <LocationSlider />
+      </div>
     </>
   );
 };
