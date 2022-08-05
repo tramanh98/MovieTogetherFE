@@ -95,4 +95,8 @@ const LocationTabs: React.FC = () => {
   );
 };
 
+const CardItem = () => {
+  
+}
+
 export default LocationTabs;

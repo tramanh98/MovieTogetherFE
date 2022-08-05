@@ -1,4 +1,13 @@
-.circle {
-  border-radius: 50%;
-  height: same-as-width;
+.swp {
+  .swiper-slide img {
+    border-radius: 50% !important;
+    height: 124px;
+    width: 124px;
+    transition: width 0.2s, height 0.2s;
+    &:hover {
+      width: 130px;
+      height: 130px;
+      box-shadow: 0 2px 9px 2px rgb(0 0 0 / 15%);
+    }
+  }
 }
