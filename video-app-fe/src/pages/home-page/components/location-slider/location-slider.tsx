@@ -12,29 +12,32 @@ const LocationSlider = () => {
     "https://pix6.agoda.net/geo/city/16552/1_16552_02.jpg?ca=6&ce=1&s=345x345&ar=1x1",
   ];
   return (
-    <Swiper
-      className="swp"
-      loop={true}
-      slidesPerView={6}
-      spaceBetween={30}
-      slidesPerGroup={6}
-      navigation={true}
-      modules={[FreeMode, Navigation, Thumbs]}
-    >
-      {imgList.map((i) => (
-        <SwiperSlide>
-          <div>
-            <img className="mx-auto" alt="example" src={i} />
-            <div className="mt-2 d-flex flex-column justify-content-center">
-              <span>
-                <b>Hoi An</b>
-              </span>
-              <span>1,652 accommodations</span>
+    <div>
+      <h2>Top destinations in Vietnam</h2>
+      <Swiper
+        className="swp"
+        loop={true}
+        slidesPerView={6}
+        spaceBetween={30}
+        slidesPerGroup={6}
+        navigation={true}
+        modules={[FreeMode, Navigation, Thumbs]}
+      >
+        {imgList.map((i) => (
+          <SwiperSlide>
+            <div>
+              <img className="mx-auto" alt="example" src={i} />
+              <div className="mt-2 d-flex flex-column justify-content-center">
+                <span>
+                  <b>Hoi An</b>
+                </span>
+                <span>1,652 accommodations</span>
+              </div>
             </div>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
 

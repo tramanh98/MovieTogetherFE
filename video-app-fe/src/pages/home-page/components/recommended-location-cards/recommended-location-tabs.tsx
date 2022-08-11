@@ -1,3 +1,4 @@
+import { EnvironmentOutlined } from "@ant-design/icons";
 import { Card, Col, Row, Spin, Tabs } from "antd";
 import { useState } from "react";
 import "./tabs.scss";
@@ -14,6 +15,7 @@ const LocationTabs: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   return (
     <div>
+      <h2>Featured homes recommended for you</h2>
       <div className="d-flex justify-content-center">
         <Tabs className="fit-content" defaultActiveKey="1">
           {defaultFamousLocations.map((l, i) => (
@@ -25,68 +27,16 @@ const LocationTabs: React.FC = () => {
         <Spin spinning={loading}>
           <Row gutter={16}>
             <Col className="gutter-row" span={6}>
-              <Card
-                hoverable
-                cover={
-                  <img
-                    alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                  />
-                }
-              >
-                <Meta
-                  title="Europe Street beat"
-                  description="www.instagram.com"
-                />
-              </Card>
+              <CardItem />
             </Col>
             <Col className="gutter-row" span={6}>
-              <Card
-                hoverable
-                cover={
-                  <img
-                    alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                  />
-                }
-              >
-                <Meta
-                  title="Europe Street beat"
-                  description="www.instagram.com"
-                />
-              </Card>
+              <CardItem />
             </Col>
             <Col className="gutter-row" span={6}>
-              <Card
-                hoverable
-                cover={
-                  <img
-                    alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                  />
-                }
-              >
-                <Meta
-                  title="Europe Street beat"
-                  description="www.instagram.com"
-                />
-              </Card>
+              <CardItem />
             </Col>
             <Col className="gutter-row" span={6}>
-              <Card
-                hoverable
-                cover={
-                  <img
-                    alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                  />
-                }
-              >
-                <Meta
-                  title="Europe Street beat"
-                  description="www.instagram.com"
-                />
-              </Card>
+              <CardItem />
             </Col>
           </Row>
         </Spin>
@@ -96,7 +46,29 @@ const LocationTabs: React.FC = () => {
 };
 
 const CardItem = () => {
-  
-}
+  return (
+    <div>
+      <div>
+        <img
+          alt="example"
+          src="	https://cdn6.agoda.net/images/accommodation/other-property-types/entire-apartment.jpg"
+        />
+      </div>
+      <div>
+        <h6>Cozrum Homes Premier Residences</h6>
+      </div>
+      <div>
+        <span>
+          <EnvironmentOutlined />
+        </span>
+        <span>District 2, HCM</span>
+      </div>
+      <div>
+        <span>VND</span>
+        <span>600,000</span>
+      </div>
+    </div>
+  );
+};
 
 export default LocationTabs;

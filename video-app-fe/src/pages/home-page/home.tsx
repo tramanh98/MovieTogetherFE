@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import HeroSlide from "./components/banner/slider";
+import HotelTypes from "./components/hotel-type-cards/hotel-type-cards";
 import LocationSlider from "./components/location-slider/location-slider";
 import LocationTabs from "./components/recommended-location-cards/recommended-location-tabs";
 
@@ -23,8 +24,9 @@ export const HomePage = () => {
       {/* banner */}
       <HeroSlide />
       <div className="container">
-        <LocationTabs />
         <LocationSlider />
+        <HotelTypes />
+        <LocationTabs />
       </div>
     </>
   );
